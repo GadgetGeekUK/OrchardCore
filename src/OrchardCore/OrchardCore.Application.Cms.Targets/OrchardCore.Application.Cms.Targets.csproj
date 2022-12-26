@@ -26,6 +26,7 @@
   -->
 
   <ItemGroup>
+    <ProjectReference Include="..\..\OrchardCore.Themes\Youoko\Youoko.csproj" />
     <ProjectReference Include="..\OrchardCore.Application.Cms.Core.Targets\OrchardCore.Application.Cms.Core.Targets.csproj" PrivateAssets="none" />
 
     <!--
