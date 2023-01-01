@@ -1,23 +1,43 @@
 <!DOCTYPE html>
-<html lang="{{ Culture.Name }}">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="{{ Culture.Name }}" class="no-js">
+<!--<![endif]-->
+
 <head>
+    <title>{% page_title Site.SiteName, position: "before", separator: " - " %}</title>
     <meta charset="utf-8">
     <!--[if IE]>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<![endif]-->
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{% page_title Site.SiteName, position: "before", separator: " - " %}</title>
-    
-    {% resources type: "Meta" %}
 
-    <!-- INSERT REQUIRED RESOURCES HERE -->
+    {% resources type: "Meta" %}
+    {% link type:"image/x-icon", rel:"shortcut icon", href:"~/Youoko/favicon.ico" %}
+
+    {% style name:"Youoko-Bootstrap" %}
+    {% style name:"Youoko-Animations" %}
     {% style name:"font-awesome", version:"4.7.0", at:"Head" %}
+    {% style name:"Youoko-Main" %}
+    {% script name:"Youoko-CustomModernizer", at:"Head" %}
+
+    {% script name:"Youoko-Compressed", at:"Foot" %}
+    {% script name:"Youoko-Main", at:"Foot" %}
 
     {% resources type: "HeadLink" %}
     {% resources type: "Stylesheet" %}
     {% resources type: "HeadScript" %}
+
+    <!--[if lt IE 9]>
+		<script src="js/vendor/html5shiv.min.js"></script>
+		<script src="js/vendor/respond.min.js"></script>
+		<script src="js/vendor/jquery-1.12.4.min.js"></script>
+	<![endif]-->
 </head>
-<body dir="{{ Culture.Dir }}">
+<body>
     <!--[if lt IE 9]>
 		<div class="bg-danger text-center">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" class="color-main">upgrade your browser</a> to improve your experience.</div>
 	<![endif]-->
@@ -25,14 +45,197 @@
 		<div class="preloader_image"></div>
 	</div>
 
-    {% render_body %}
-    
+    <!-- search modal -->
+	<div class="modal" tabindex="-1" role="dialog" aria-labelledby="search_modal" id="search_modal">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+		<div class="widget widget_search">
+			<form method="get" class="searchform search-form" action="/">
+				<div class="form-group">
+					<input type="text" value="" name="search" class="form-control" placeholder="Search keyword" id="modal-search-input">
+				</div>
+				<button type="submit" class="btn">Search</button>
+			</form>
+		</div>
+	</div>
+
+    <div id="canvas">
+        <div id="box_wrapper">
+
+            <!--topline section visible only on small screens|-->
+			<section class="page_topline ds c-my-10 s-borderbottom  d-lg-none">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col-8 text-left">
+							<span class="social-icons">
+
+								<a href="#" class="fa fa-facebook " title="facebook"></a>
+								<a href="#" class="fa fa-twitter " title="twitter"></a>
+								<a href="#" class="fa fa-google " title="google"></a>
+
+							</span>
+						</div>
+						<div class="col-4 text-right">
+							<!--modal search-->
+							<span>
+								<a href="#" class="search_modal_button">
+									<i class="fa fa-search"></i>
+								</a>
+							</span>
+
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--eof topline-->
+
+            <div class="header_absolute"/>
+                <header class="page_header ds justify-nav-center s-pt-10 s-pb-10">
+					<div class="container">
+						<div class="row align-items-center">
+							<div class="col-xl-2 col-lg-3 col-11">
+								<a href="./" class="logo">
+									<img src='{{ "~/Youoko/assets/images/logo.png"  | href }}' alt="" />
+								</a>
+							</div>
+							<div class="col-xl-8 col-lg-6 col-1 text-sm-center">
+								<!-- main nav start -->
+								<nav class="top-nav">
+									<ul class="nav sf-menu">
+										<li>
+											<a href="#box_wrapper">Home</a>
+											<ul>
+												<li>
+													<a href="index.html">MultiPage</a>
+												</li>
+												<li>
+													<a href="index_static.html">Static Intro</a>
+												</li>
+												<li>
+													<a href="index_singlepage.html">Single Page</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="#about">About</a>
+										</li>
+										<li>
+											<a href="#programs">Programs</a>
+										</li>
+										<li>
+											<a href="#testimonials">Testimonials</a>
+										</li>
+										<li>
+											<a href="#team">Team</a>
+										</li>
+										<!-- contacts -->
+										<li>
+											<a href="#form">Contact Us</a>
+										</li>
+										<!-- eof contacts -->
+										<li>
+											<a href="#faq">Faq</a>
+										</li>
+										<li>
+											<a href="#news">News</a>
+										</li>
+									</ul>
+								</nav>
+								<!-- eof main nav -->
+							</div>
+							<div class="col-xl-2 col-lg-3 text-right d-none d-xl-block">
+								<ul class="top-includes">
+									<li>
+										<span>
+											<a href="#" class="btn btn-outline-maincolor">trial offer</a>
+										</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- header toggler -->
+					<span class="toggle_menu"><span></span></span>
+				</header>
+
+                <section class="page_slider">
+
+                </section>
+            </div>
+
+            <section class="s-pb-40 s-pt-0 s-py-lg-50 c-my-40 c-my-lg-15 ds contact-info">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-4 text-center">
+                            <div class="icon-box icon-absolute text-center">
+                                <div class="icon-styled">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+                                <span>CALL US 24/7</span>
+                                <h5>+7-85-569-123</h5>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 text-center">
+                            <div class="icon-box icon-absolute text-center">
+                                <div class="icon-styled">
+                                    <i class="fa fa-map-marker"></i>
+                                </div>
+                                <span>SEASON STREET 45/2</span>
+                                <h5>LOS ANGELES, INC - 4502</h5>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 text-center">
+                            <div class="icon-box icon-absolute text-center">
+                                <div class="icon-styled">
+                                    <i class="fa fa-clock-o"></i>
+                                </div>
+                                <span>WORKING HOURS</span>
+                                <h5>DAILY: 9AM - 8PM</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="ds s-py-60 s-py-md-90 s-overlay mobile-overlay about-section">
+				<div class="container">
+					<div class="row d-flex justify-content-end">
+						<div class="divider-70 d-none d-xl-block"></div>
+						<div class="col-md-12 col-xl-6 ">
+							<h3 class="special-heading text-lg-left text-center">about <span class="color-main">fight</span> school</h3>
+							<div class="divider-40 d-none d-xl-block"></div>
+							<p class="excerpt text-lg-left text-center">Fight School has specialized in martial arts since 1986 and has one of the most innovative programs in the nation.</p>
+							<p class="text-lg-left text-center">
+								We teach martial arts because we love it — not because we want to make money on you. Unlike other martial arts schools, we do not require you to sign long term contracts.
+								You just pay one low monthly fee for your martial arts and self defense classes at the beginning of each month. Many martial arts...
+								<a class="about-link" href="about.html">
+									read more <i class="fa fa-level-down" aria-hidden="true"></i>
+								</a>
+							</p>
+
+							<div class="signature">
+								<div class="signature__left">
+									<h5>Aiden Richards</h5>
+									<span>DIRECTOR / INSTRUCTOR</span>
+								</div>
+								<div class="signature__right">
+									<img src='{{ "~/Youoko/assets/images/signature.png"  | href }}' alt="signature">
+								</div>
+							</div>
+						</div>
+						<div class="divider-60 d-none d-xl-block"></div>
+					</div>
+				</div>
+			</section>
+
+            {% render_body %}
+        </div>
+    </div>
+
     <footer>
-    {% render_section "Footer", required: false %}
+        {% render_section "Footer", required: false %}
     </footer>
-    
-    {% script name:"jquery", use_cdn:"true", at:"Foot" %}
-    
     {% resources type: "FootScript" %}
 </body>
 </html>

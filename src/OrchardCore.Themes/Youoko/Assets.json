@@ -1,0 +1,9 @@
+{
+  {
+    "copy": true,
+    "inputs": [
+      "Assets/dist/assets/*"
+    ],
+    "output": "wwwroot/assets/@"
+  }
+}

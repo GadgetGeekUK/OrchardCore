@@ -10,9 +10,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\OrchardCore\OrchardCore.ContentManagement\OrchardCore.ContentManagement.csproj" />
     <ProjectReference Include="..\..\OrchardCore\OrchardCore.DisplayManagement\OrchardCore.DisplayManagement.csproj" />
     <ProjectReference Include="..\..\OrchardCore\OrchardCore.ResourceManagement.Abstractions\OrchardCore.ResourceManagement.Abstractions.csproj" />
     <ProjectReference Include="..\..\OrchardCore\OrchardCore.Theme.Targets\OrchardCore.Theme.Targets.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\dist\assets\" />
+    <Folder Include="Assets\dist\css\" />
+    <Folder Include="Assets\dist\js\" />
+    <Folder Include="Assets\src\" />
+    <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
 </Project>
